@@ -3,7 +3,7 @@ import os
 
 directory = 'dane'
 
-for woj in os.listdir(directory)[5:]:
+for woj in os.listdir(directory):
 	f = os.path.join(directory, woj)
 	for kod in os.listdir(f):
 		g = os.path.join(f, kod)
