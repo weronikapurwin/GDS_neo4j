@@ -14,7 +14,7 @@ for woj in os.listdir(directory):
 					try:
 						with fiona.open(h, 'r') as source:
 							# Otwórz plik SHP do zapisu
-							with fiona.open(g+'\\'+os.path.splitext(plik)[0]+'.shp', 'w', driver='ESRI Shapefile', schema=source.schema) as dest:
+							with fiona.open(g+'\\'+os.path.splitext(plik)[0]+'.shp', 'w', driver='ESRI Shapefile', schema=source.schema, encoding='UTF-8') as dest:
 								for feature in source:
 									dest.write(feature)
 					except fiona.errors.UnsupportedGeometryTypeError as e:
@@ -30,7 +30,7 @@ for woj in os.listdir(directory):
 					try:
 						with fiona.open(h, 'r') as source:
 							# Otwórz plik SHP do zapisu
-							with fiona.open(g+'\\'+os.path.splitext(plik)[0]+'.shp', 'w', driver='ESRI Shapefile', schema=source.schema) as dest:
+							with fiona.open(g+'\\'+os.path.splitext(plik)[0]+'.shp', 'w', driver='ESRI Shapefile', schema=source.schema, encoding='UTF-8') as dest:
 								for feature in source:
 									dest.write(feature)
 					except fiona.errors.UnsupportedGeometryTypeError as e:
@@ -42,20 +42,3 @@ for woj in os.listdir(directory):
 						print(f"Ignorowanie błędu w woj {woj}  w pliku {h}: {e}")
 						continue
 
-        
-	        
-
-
-# # Ścieżka do pliku GML wejściowego
-# input_gml = 'dane\\dolnoslaskie\\0201_wfs_egib\\0201_dzialki_egib_wfs_gml.gml'
-
-# # Ścieżka do pliku SHP wyjściowego
-# output_shp = 'dane\\dolnoslaskie\\0201_wfs_egib\\0201_dzialki.shp'
-
-# # Otwórz plik GML
-# with fiona.open(input_gml, 'r') as source:
-#     # Otwórz plik SHP do zapisu
-#     with fiona.open(output_shp, 'w', driver='ESRI Shapefile', schema=source.schema) as dest:
-#         # Skopiuj obiekty z pliku GML do pliku SHP
-#         for feature in source:
-#             dest.write(feature)
