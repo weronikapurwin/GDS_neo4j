@@ -42,7 +42,4 @@ for woj in os.listdir(directory):
 						print(f"Ignorowanie błędu w woj {woj}  w pliku {h}: {e}")
 						continue
 
-<<<<<<< HEAD
     
-=======
->>>>>>> origin/main
