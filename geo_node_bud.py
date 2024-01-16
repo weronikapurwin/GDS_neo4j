@@ -6,10 +6,10 @@ import os
 
 if __name__=="__main__":
    
-   directory = 'dane'
+   directory = 'D:\inzynierka\dane'
    
 
-   for i in range(12,16,2):
+   for i in range(10,12,2):
       budynki_final = pd.DataFrame()
 
       for wojew in tqdm(os.listdir(directory)[i:i+2]):
